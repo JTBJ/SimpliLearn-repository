@@ -23,19 +23,20 @@ public class Main {
         String selection = "";
         
         if(!hasPassedOnce){
-            String message = "This application is designed in full to complete the tasks\n" +
-	                     "listed in the first e-book and other program features mentioned\n" +
-	                     "during the first two days of class.\n" +
+            String message = "This application is designed in full to complete all tasks\n" + //commit adjustments once finish
+	                     "listed in the first two days of class.\n" +
 	                     "You will be presented with a list of options to choose from.\n\n";
 	        Main.printMessage(message);
         }
-        String presentOptions = "Choose a process to complete.\n" +
+        String presentOptions = "Choose a process to complete and press enter.\n" +
 	                            "1.) Number Converter\n" +
 	                            "2.) Access Modifiers\n" +
 	                            "3.) Arithmetic Calculations\n" +
 	                            "4.) Map Collections instance\n" +
 	                            "5.) Return a value from method\n" +
-	                            "\"Q\" or \"q\" for quit\n";
+	                            "6.) Implicit Casting\n" +
+	                            "7.) Explicity Casting\n" +
+	                            "\"Q\" or \"q\" to quit\n";
 	    Main.printMessage(presentOptions);
 	    selection = console.nextLine();
 	    option(selection);
@@ -63,6 +64,12 @@ public class Main {
                 System.out.println(returnStatementDemo());
                 hasPassedOnce = true;
                 sleepTimer(2000);
+                break;
+            case "6":
+                new SimpliArithmatic().implicitTypeCasting(this);
+                break;
+            case "7":
+                new SimpliArithmatic().explicitTypeCasting(this);
                 break;
             case "Q":
                 String quitMessage = "Terminating applicaiton...";
@@ -106,7 +113,10 @@ public class Main {
 	public static void main(String[] args) throws InterruptedException, Exception {
 	    Main main = new Main();
 	    main.selectionProcess();
-
 	}
 }
+
+/*It took me a while to find this page. By the time I finally found it, 
+I had merged multiple project into one application, which spans several classes. 
+I have included several key features from various lessons into this submission.*/ 
 
